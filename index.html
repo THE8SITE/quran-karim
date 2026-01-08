@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>القرآن الكريم</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark">
 
 <header>
   <h1>📖 القرآن الكريم</h1>
-  <div class="controls">
-    <input type="text" id="search" placeholder="🔍 بحث بالصور أو السور">
-    <button id="toggleMode">🌙 / ☀️</button>
+
+  <div class="top-bar">
+    <input type="text" id="search" placeholder="ابحث عن سورة...">
+    <button id="toggleMode">🌙</button>
   </div>
 </header>
 
-<section class="container" id="cards">
+<main class="videos" id="videoList">
 
-  <div class="card" data-title="تجربة">
-    <video controls preload="metadata">
+  <div class="card" data-title="الفاتحة">
+    <img src="images/fatiha.jpg">
+    <h3>تجربة</h3>
+    <video controls preload="none">
       <source src="v/v.mp4" type="video/mp4">
     </video>
-    <h3>تجربة</h3>
   </div>
 
-  <div class="card" data-title="الإخلاص">
-    <video controls preload="metadata">
-      <source src="videos/ikhlas.mp4" type="video/mp4">
+  <div class="card" data-title="البقرة">
+    <img src="images/baqara.jpg">
+    <h3>سورة البقرة</h3>
+    <video controls preload="none">
+      <source src="videos/baqara.mp4" type="video/mp4">
     </video>
-    <h3>سورة الإخلاص</h3>
   </div>
 
-  <div class="card" data-title="تلاوة">
-    <img src="images/quran.jpg" alt="تلاوة">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-    <h3>تلاوة من يوتيوب</h3>
+  <div class="card" data-title="آل عمران">
+    <img src="images/imran.jpg">
+    <h3>سورة آل عمران</h3>
+    <video controls preload="none">
+      <source src="videos/imran.mp4" type="video/mp4">
+    </video>
   </div>
 
-</section>
+</main>
+
 <footer>
     <p> صدقة جارية - جميع الحقوق محفوظة 2026 @ تم الصنع بواسطة &copy; <a href="https://the8site.github.io/MOHAMED-YASER/" target="_blank">MO_YASER</a></p>
 </footer>

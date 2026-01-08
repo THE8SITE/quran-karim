@@ -1,44 +1,30 @@
-const container = document.getElementById("videoContainer");
+/* 🌙 / ☀️ */
+const toggle = document.getElementById("toggleMode");
+const body = document.body;
 
-videos.forEach(video => {
-  const card = document.createElement("div");
-  card.className = "card";
+toggle.onclick = () => {
+  body.classList.toggle("dark");
+  body.classList.toggle("light");
+  toggle.textContent = body.classList.contains("dark") ? "🌙" : "☀️";
+};
 
-  if (video.type === "youtube") {
-    card.innerHTML = `
-      <iframe src="${video.url}" allowfullscreen></iframe>
-      <h3>${video.surah}</h3>
-      <span>${video.reader}</span>
-    `;
-  } else {
-    card.innerHTML = `
-      <video controls>
-        <source src="${video.url}" type="video/mp4">
-      </video>
-      <h3>${video.surah}</h3>
-      <span>${video.reader}</span>
-    `;
-  }
+/* 🔍 Search */
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
 
-  container.appendChild(card);
+search.addEventListener("input", () => {
+  const value = search.value.trim();
+
+  cards.forEach(card => {
+    const title = card.dataset.title;
+    card.style.display = title.includes(value) ? "block" : "none";
+  });
 });
 
-
-/* الوضع الليلي */
-const toggleBtn = document.getElementById("themeToggle");
-
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light");
-  toggleBtn.textContent = "☀️";
-}
-
-toggleBtn.onclick = () => {
-  document.body.classList.toggle("light");
-  if (document.body.classList.contains("light")) {
-    localStorage.setItem("theme", "light");
-    toggleBtn.textContent = "☀️";
-  } else {
-    localStorage.setItem("theme", "dark");
-    toggleBtn.textContent = "🌙";
-  }
-};
+/* ⏸️ إيقاف باقي الفيديوهات */
+const videos = document.querySelectorAll("video");
+videos.forEach(v => {
+  v.addEventListener("play", () => {
+    videos.forEach(o => o !== v && o.pause());
+  });
+});
