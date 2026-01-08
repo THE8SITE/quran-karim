@@ -1,140 +1,22 @@
-/* =====================
-   Base Styles
-===================== */
-body {
-  font-family: 'Cairo', sans-serif;
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  margin: 0;
-  color: #fff;
-  transition: all .4s;
-  padding-bottom: 60px; /* مساحة للفوتر */
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif}
+body{transition:.3s}
 
-/* ===== Header ===== */
-header {
-  text-align: center;
-  padding: 25px 15px;
-}
+body.dark{background:#0f172a;color:#fff}
+body.light{background:#f8fafc;color:#020617}
 
-header h1 {
-  font-size: 32px;
-  margin-bottom: 5px;
-}
+header{padding:20px;text-align:center}
+.controls{margin-top:10px;display:flex;gap:10px;justify-content:center}
 
-header p {
-  font-size: 15px;
-  opacity: 0.9;
-  margin-bottom: 10px;
-}
+input{padding:10px;border-radius:10px;border:none;width:200px}
+button{padding:10px 15px;border-radius:10px;border:none;cursor:pointer}
 
-#themeToggle {
-  background: rgba(255,255,255,0.15);
-  border: none;
-  padding: 8px 16px;
-  border-radius: 30px;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background .3s;
-}
+.container{padding:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
 
-#themeToggle:hover {
-  background: rgba(255,255,255,0.3);
-}
+.card{background:rgba(0,0,0,.2);border-radius:16px;padding:10px;text-align:center;transition:.3s}
+body.light .card{background:#fff;box-shadow:0 10px 25px rgba(0,0,0,.1)}
+.card:hover{transform:translateY(-5px)}
 
-/* ===== Main Grid ===== */
-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 15px;
-  padding: 15px;
-}
+img{width:100%;height:150px;object-fit:cover;border-radius:12px}
+video,iframe{width:100%;height:180px;margin-top:10px;border-radius:12px}
 
-/* ===== Card ===== */
-.card {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 10px;
-  transition: transform .3s, box-shadow .3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-}
-
-iframe, video {
-  width: 100%;
-  height: 160px;
-  border-radius: 8px;
-  display: block;
-}
-
-/* ===== Card Text ===== */
-.card h3 {
-  margin: 8px 0 4px;
-  font-size: 15px;
-}
-
-.card span {
-  font-size: 13px;
-  opacity: 0.8;
-}
-
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 10px 5px;
-  font-size: 12px;
-  color: rgba(255,255,255,0.7);
-  background: rgba(0,0,0,0.2);
-  backdrop-filter: blur(5px);
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  transition: all .3s;
-}
-
-/* ===== الوضع الفاتح ===== */
-body.light {
-  background: linear-gradient(135deg,#f9f9f9,#eaeaea);
-  color: #111;
-}
-
-body.light header,
-body.light #themeToggle,
-body.light footer {
-  color: #111;
-}
-
-body.light .card {
-  background: rgba(255,255,255,0.85);
-  color: #111;
-}
-
-/* ===== Mobile Optimizations ===== */
-@media (max-width: 768px) {
-  header h1 { font-size: 28px; }
-  header p { font-size: 14px; }
-  #themeToggle { font-size: 14px; padding: 6px 12px; }
-  iframe, video { height: 150px; }
-  main { padding: 12px; gap: 12px; }
-  .card { padding: 8px; }
-  .card h3 { font-size: 14px; }
-  .card span { font-size: 12px; }
-  footer { font-size: 11px; padding: 8px 5px; }
-}
-
-@media (max-width: 480px) {
-  header h1 { font-size: 24px; }
-  header p { font-size: 13px; }
-  #themeToggle { font-size: 13px; padding: 5px 10px; }
-  iframe, video { height: 140px; }
-  main { padding: 10px; gap: 10px; }
-  .card h3 { font-size: 13px; }
-  .card span { font-size: 11px; }
-  footer { font-size: 10px; padding: 6px 4px; }
-}
+footer{text-align:center;padding:15px;opacity:.7}

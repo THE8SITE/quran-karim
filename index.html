@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>القرآن الكريم - صدقة جارية</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>القرآن الكريم</title>
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark">
 
 <header>
-  <h1>﴿ القرآن الكريم ﴾</h1>
-  <p>تلاوات خاشعة بجودة عالية</p>
-  <button id="themeToggle">🌙</button>
+  <h1>📖 القرآن الكريم</h1>
+  <div class="controls">
+    <input type="text" id="search" placeholder="🔍 بحث بالصور أو السور">
+    <button id="toggleMode">🌙 / ☀️</button>
+  </div>
 </header>
 
-<main id="videoContainer"></main>
+<section class="container" id="cards">
 
-<script src="videos.js"></script>
-<script src="app.js"></script>
+  <div class="card" data-title="تجربة">
+    <video controls preload="metadata">
+      <source src="v/v.mp4" type="video/mp4">
+    </video>
+    <h3>تجربة</h3>
+  </div>
+
+  <div class="card" data-title="الإخلاص">
+    <video controls preload="metadata">
+      <source src="videos/ikhlas.mp4" type="video/mp4">
+    </video>
+    <h3>سورة الإخلاص</h3>
+  </div>
+
+  <div class="card" data-title="تلاوة">
+    <img src="images/quran.jpg" alt="تلاوة">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+    <h3>تلاوة من يوتيوب</h3>
+  </div>
+
+</section>
 <footer>
-  تم الصنع بواسطة <span>mo_yaser . صدقة جارية </span>
+    <p> صدقة جارية - جميع الحقوق محفوظة 2026 @ تم الصنع بواسطة &copy; <a href="https://the8site.github.io/MOHAMED-YASER/" target="_blank">MO_YASER</a></p>
 </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
